@@ -1,0 +1,77 @@
+/* Classe */
+.formulaire{
+		text-align: center;
+		border-style: solid;
+		border-radius: 5%;
+		overflow: auto;
+		width: 500px;
+		margin-left: 33%;
+		}
+
+.test{
+		display: block;
+}
+
+.required{
+		color: red;
+
+}
+
+/* ID */
+
+
+/* Elements dans l'entête */
+nav{
+		background-color: rgba(185, 185, 185, 1.0);
+	}
+
+p{
+	text-align: center;
+	font-size: 35px;
+	margin: 0px;
+}
+
+input{
+		margin: 20px;
+		background-color: grey;
+	}
+
+/* Elements dans le corps principale */
+
+form.identité {
+    			display: table;
+    			color: white;
+			}
+
+div.identité {
+    			display: table-row;
+    			color: white;
+    		
+			}
+
+label, input{
+    			display: table-cell;
+    			margin-bottom: 10px;
+    			color: white;
+    			text-align: center;	
+			}
+
+label{
+    	padding-right: 10px;
+    	color: white;
+    	font-size: 15px;
+    	padding-bottom: 15px;
+    	color: white; /* a changé */
+	}
+
+h4{
+		font-style: oblique;
+}
+section{
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+
+P{
+	margin-left: 30%;
+}

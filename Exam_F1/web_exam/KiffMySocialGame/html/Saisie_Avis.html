@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<title>Avis.html</title>
+	<link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/Saisie.css">
+	<link rel="icon" href="">
+</head>
+<body>
+	<header>
+		 <!--Menu déroulant -->
+		<ul id="dropdown1" class="dropdown-content">
+  			<li><a href="#!">Zone identité</a></li>
+  			<li><a href="#!">Zone préférence de jeux</a></li>
+  			<li><a href="#!">Zone avis</a></li>
+  			<li><a href="#!">Zone de validation</a></li>
+		</ul>
+		<nav>
+    		<div class="nav-wrapper nav">
+      			<h6 class="brand-logo center texte">Formulaire</h6>
+     				 <ul>
+       					<li class="waves-effect"><a href="../html/Votre_Avis.html">Avis</a></li>
+       					 <!--Dropdown Trigger-->
+      					<li class="active"><a class="dropdown-trigger" href="#!" data-target="dropdown1">Liste formulaire</a></li>
+      					<li class="active"><input type="button" value="Connexion"></li>
+      				</ul>
+    		</div>
+ 		</nav>
+	</header>
+	<main>
+		<section>
+			<div class="formulaire">
+				<h4>identité</h4>
+				<form action="" method="get">
+					<fieldset>
+	  					<div>
+	    					<center><label for="name" class="required" >Entrez votre nom: </label></center>
+	    					<input type="text" name="name" id="name" placeholder="nom" required >
+	  					</div>
+	  					<div>
+	    					<center><label for="name" class="required">Entrez votre prénom: </label></center>
+	    					<input type="text" name="last_name" id="last_name" placeholder="prénom" required>
+	  					</div>
+	  					
+	  					
+	  					<div id="genre"></div>
+						
+
+						<div>
+	    					<center><label for="mail" class="required">Saisir votre mail:</label></center>
+	    					<input type="email" name="champA" id="champA" placeholder="mail" required>
+	  					</div>
+	  					<div>
+	    					<center><label for="mail2" class="required">Saisir à nouveau votre mail:</label></center>
+	    					<input type="email" name="champB" id="champB" placeholder="mail" onblur="checkMail()"required>
+	    					<div id="erreur" style= "color:red"></div>
+	  					</div>
+	  					<div>
+	    					<center><label for="ddn" class="required">Selectionnez votre date de naissance:</label></center>
+	    					<input type="date" name="ddn" id="ddn" required>
+	  					</div>
+	  					<div>
+	    					<center><label for="ddn">Saisir votre adresse postal:</label></center>
+	    					<input type="text" name="adresse" id="adresse" placeholder="optionnel">
+	  					</div>
+	  					<div>
+	    					<center><label for="tel">Saisir votre numéro de téléphone:</label></center>
+	    					<input type="text" name="tel" id="tel" placeholder="optionnel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+
+	    					<input type="submit" value="submit" >
+	  					</div>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+		<section>
+			<div class="formulaire">
+				<h4>Préférence de jeux</h4>
+				<form action="" method="get">
+					<fieldset>
+					<div>
+      					<center><label>Quels est votre type de jeu de société favoris:</label>
+
+      						<div id="jeux"></div>
+
+      					<input type="submit" value="submit" onclick="checkButton() transfert()" >
+					</div>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+		<section>
+			<div class="formulaire">
+				<h4>Avis</h4>
+				<form>
+					<fieldset>
+						<p>
+							<div id="avis"></div>
+
+        						<p class="range-field">
+        							<center><label>noter le jeu sur 5</label></center>
+      									<input type="range" id="test5" min="0" max="5" />
+      							</p>
+        						<center><label for="textarea2">Saisir votre avis</label></center>
+        						<textarea id="textarea2" class="materialize-textarea" data-length="200" required></textarea>
+
+        					<input type="submit" value="submit" onclick="checkButton() transfert()" >
+						</p>
+      				</fieldset>
+      			</form>
+    		</div>
+		</section>
+	</main>
+	<footer>
+		<div>
+			<span style="color:white">@ 2022, ..., Inc, Tous droits réservés</span>
+		</div>
+	</footer>
+	 <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+</body>
+</html>
