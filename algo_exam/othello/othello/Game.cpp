@@ -1,19 +1,22 @@
 #include "Game.h"
 
+//Instance du jeu
 Game::Game()
 {
-    grid = new Grid();
+    grid = new Grid(); //Permet de créer une nouvelle instance de Grid (en gros ca va créer un nouveau tableau à chaque début de partie)
 }
 
+//Relance le jeu
 void Game::Restart()
 {
     grid->ClearGrid();
     Start();
 }
 
+//Gère le tour du joueur
 void Game::PlayerTurn()
 {
-    std::cout << "c\'est le tour du J1 \n";
+    std::cout << "c'est le tour du J1 \n";
     int index;
     do {
         std::cout << "Ou voulez vous jouer ?\n";
@@ -21,15 +24,19 @@ void Game::PlayerTurn()
     } while (!grid->PlaceSymbol(grid->m_symbol.m_player, index));
 }
 
+//Joue le tour d'un autre joueur
 void Game::OtherTurn()
 {
     std::cout << "c'est le tour du mec à déglinguer, son symbole est" << grid->m_symbol.m_opponent << std::endl;
     grid->PlaceOpponentBot();
 }
 
+//Gestionnaire de victoire
 bool Game::HandleWin()
 {
+    //permet de récupérer la fonction DidSomeoneWin()
     std::pair<bool, char> winner = grid->DidSomeoneWin();
+    //second permet de récupérer le 2ème type de valeur (char en l'occurence)
     if (winner.second == grid->m_symbol.m_player)
     {
         std::cout << "GG MAGGLE\n";
@@ -38,9 +45,11 @@ bool Game::HandleWin()
     {
         std::cout << "T'es une grosse merde dégage de ma plouze";
     }
+    //first permet de récupérer le 1er type de valeur (bool en l'occurence)
     return winner.first;
 }
 
+//permet de débuter le jeu en "tour par tour"
 void Game::Start()
 {
     do {

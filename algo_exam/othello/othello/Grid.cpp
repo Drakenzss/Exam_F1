@@ -1,9 +1,12 @@
 #include "Grid.h"
 
 
+
+
 //Initialisation de l'instance du tableau
 Grid::Grid()
 {
+	//push_back permet d'ajouter un élément dans le tableau (vector)
 	for (int i = 0; i < 64; i++)
 		_grid.push_back(m_symbol.m_neutral);
 }
@@ -29,17 +32,20 @@ bool Grid::HasCaseToPlay()
 //Permet de placer le symbole du joueur
 bool Grid::PlaceSymbol(char currentSymbol, int index)
 {
+	//Permet que aucun des deux joueurs puissent mettre de pion out of range
 	if (index < 0 || index >= (int)_grid.size())
 	{
-		std::cout << "Saisie incorrect you're out on the bounds";
+		std::cout << "Saisie incorrect you're out on the bounds"; // = printf en console
 		return false;
 	}
+	// Aajouter le symbole du joueur
 	if (_grid[index] == m_symbol.m_neutral)
 	{
 		_grid[index] = currentSymbol;
 		_numberN++;
 		return true;
 	}
+	//La case est déjà prise par l'autre joueur
 	else
 	{
 		std::cout << "Cette case est deja prise";
@@ -64,23 +70,27 @@ void Grid::PlaceOpponentBot()
 	}
 }
 
+//Sert à check si l'un des deux joueurs à gagner std::pair est une fonction qui return 2 types de valeur
 std::pair<bool, char> Grid::DidSomeoneWin()
 {
+	//Le joueur à gagner
 	if (HasWon(m_symbol.m_player))
 	{
 		return { true, m_symbol.m_player };
 	}
-
+	//L'adversaire à gagner (fdp)
 	else if (HasWon(m_symbol.m_opponent))
 	{
 		return { true, m_symbol.m_opponent };
 	}
+	//Personne n'a gagner
 	else
 	{
 		return { false, m_symbol.m_neutral };
 	}
 }
 
+//Condition de victoire
 bool Grid::HasWon(char currentSymbol)
 {
 
@@ -105,6 +115,7 @@ bool Grid::HasWon(char currentSymbol)
 	}
 }
 
+//Pemet de dessiner le tableau
 void Grid::DrawGrid()
 {
 	std::cout << std::endl;

@@ -1,2 +1,8 @@
-﻿  Init.cpp
+﻿  Game.cpp
+  Init.cpp
+  Main.cpp
+C:\Users\Drakenzs\Desktop\Exam_F1\algo_exam\othello\othello\Main.cpp(7,15): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\Drakenzs\Desktop\Exam_F1\algo_exam\othello\othello\Main.cpp(6,20): warning C4101: 'end' : variable locale non référencée
+C:\Users\Drakenzs\Desktop\Exam_F1\algo_exam\othello\othello\Main.cpp(6,13): warning C4101: 'start' : variable locale non référencée
+  Génération de code en cours...
   othello.vcxproj -> C:\Users\Drakenzs\Desktop\Exam_F1\algo_exam\othello\Debug\othello.exe
