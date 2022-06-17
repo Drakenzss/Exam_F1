@@ -1,0 +1,14 @@
+/* entête*/
+
+/* Corps Principale */
+
+body{
+		background-color: rgba(120, 120, 120, 0.8);
+}
+
+/* Bas de page */
+
+footer{
+		text-align: center;
+		background-color: rgba(180, 180, 180, 0.8);
+	}

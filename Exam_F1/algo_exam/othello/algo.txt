@@ -1,0 +1,214 @@
+Algorythme : Othelo
+
+// BUT : Construire un Othello
+
+// ENTREE : La personne saisie son nom, le mode de jeu et joue contre un ordinateur
+
+// SORTIE : A la fin de la partie un des joueur gagne et c'est la fin du programme
+
+					//Structure
+Struct Symbôle
+{
+	char player='B'
+	char adversaire='N'
+	char neutre=' '
+}symbôle
+
+
+					//Procedure
+Procedure Menu()
+VAR menu, goMenu : ENTIER
+		c : CHAR
+Debut
+		ECRIRE "Othello "
+		ECRIRE "Nous voici dans le jeu l othello, appuyez sur ENTER pour passer à la suite"
+		LIRE c
+		ECRIRE "Regle du jeu "
+		ECRIRE "Votre but va etre d'avoir le plus de territoire de votre couleur sur le plateau, la partie se termine quand plus aucun joueur ne peut poser de pion"
+		ECRIRE "Selectionnez votre mode de jeu "
+		ECRIRE "0: Affronter un ami "
+		ECRIRE "1: Affronter l'ordinateur "
+		ECRIRE "2: Quittez "
+		ECRIRE goMenu
+		
+		CAS (goMenu)
+			cas 0:
+				ECRIRE "0: Affronter un ami"
+				breack
+			cas 1:
+				ECRIRE "1: Affronter l'ordinateur "
+				breack
+			cas 2:
+				ECRIRE "2: Quittez "
+				breack
+			defaut
+				ECRIRE "ERREUR"
+				breack
+FIN
+
+Procedure ClearGrid()
+Debut
+	POUR pas de 0 a taillegrille faire pas de 1
+		FAIRE
+			grille[i] ->symbôle.neutre
+	FINPOUR
+Fin
+
+bool caseestjouer()
+DEBUT
+	POUR i de 0 a taillegrille faire pas de 1
+		FAIRE
+			SI (grille[i] = symbole.neutre)
+				ALORS
+					return true
+			FINSI
+	FINPOUR
+FIN
+
+bool TourPossible()
+Debut
+	POUR pas de 0 a taillegrille faire pas de 1
+		FAIRE
+			SI(grille[i] = symbole.neutre)
+				ALORS
+			FINSI		retourne true
+	FINPOUR
+FIN
+
+bool PlaceSymbole(CHAR Symbole, ENTIER index)
+DEBUT
+	SI (index < 0 OU index > taillegrille)
+		ALORS
+			ECRIRE "Saisie incorrect"
+			return false
+	FINSI
+
+	SI 	(grille[index] = symbole.neutre)
+		ALORS
+			grille[index] = Symbole
+			pas de 1
+			return true
+	SINON 
+		ECRIRE "Cette case est déjà prise"
+		return false
+	FINSI
+FIN
+
+Procedure Adversaire()
+DEBUT
+	SI (!caseestjouer())
+		ALORS
+			return
+	FINSI
+
+	VAR randIndex : ENTIER
+
+	FAIRE
+		randIndex = ran() modulo 64
+	TANTQUE (grille[randIndex] != symbole.neutre)
+		FAIRE
+			grille[randIndex] -> symbole.adversaire
+			pas de 1
+	FINFAIRETANTQUE
+
+FIN
+
+bool AfficheVictoire( char symbole)
+DEBUT
+	POUR i de 0 a taillegrille faire pas de 1
+		FAIRE
+			SI ( nombre B > nombre N ET grille[i] pas de 1)
+				ALORS
+					ECRIRE "Les blancs gagne"
+					return true
+			SINON SI (nombre N > numbre B ET grille[i] pas de 1)
+				ECRIRE "Les noirs on gagné"
+				return true
+			FINSIALORSSI
+		ECRIRE "Personne ne gagne"
+		return false
+	FINPOUR
+
+FIN
+
+Procedure DessinGrille()
+DEBUT
+	POUR I DE 0 A taillegrille faire pas de 1
+		FAIRE
+			SI (i modulo 8 = 0 && i != 0)
+				ALORS 
+					ECRIRE "---------"
+			FINSI
+
+			SI (i modulo 8 =1)
+				ALORS 
+					ECRIRE " | " + grille[i] + " | "
+			SINON
+				LIRE grille[i]
+		FINSISINON
+	FINPOUR
+FIN
+
+Procedure Relancer()
+DEBUT
+	grille->ClearGrid()
+	Debut()
+FIN
+
+Procedure TourJoueur()
+DEBUT
+	ECRIRE "C'est le tour de j1"
+
+	VAR index : ENTIER
+
+	FAIRE
+		ECRIRE "Ou voulez vous jouer ?"
+		LIRE index
+	TANTQUE (!grille.placesymbole(grille.symbole.joueur + index))
+	FINFAIRETANTQUE
+FIN
+
+Procedure TourAdverse()
+DEBUT
+	ECRIRE "C'est le tour du joueur 2"
+	grille->adversaire()
+FIN
+
+bool Victoire()
+DEBUT
+	VAR winner = BOOL
+
+	SI(grille.joueur = winner)
+		ALORS
+			ECRIRE "Vous avez gagner"
+	SINON SI(grille->symbole.adversaire = winner)
+		FAIRE
+			ECRIRE "Vous avez perdu"
+	FINSISINONSI
+	return winner
+FIN
+
+Procedure Debut()
+DEBUT
+	FAIRE
+		TourJoueur()
+		grille->DessinGrille
+		Tour adversaire()
+		ECRIRE "Le tour est fini"
+	TANTQUE
+		 (!Victoire)
+FIN
+
+
+
+
+					// Main
+DEBUT
+	// cette variable permet d'annoter les actions qui vont se déroulé
+	
+	// Lancement de l'instance de jeu
+	Game game = Game();
+
+	// Lancement du jeu
+	Menu()
+FIN

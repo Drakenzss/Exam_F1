@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+					<title>Saisie avis</title>
+					<!-- liens vers les différent fichier CSS -->
+	<link type="text/css" rel="stylesheet" href="../css/materialize.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/Saisie.css">
+	<!-- lien pour l'icone de la page -->
+	<link rel="icon" href="../img/icons.png">
+	<!-- adaptation du site sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>	
+<body>
+	<div class="container">
+		<div class="header">
+			<!-- titre du formulaire -->
+			<h2>Formulaire</h2>
+		</div>
+			<form action="Avis.html" method="GET">
+				<!-- liaison entre les formulaire -->
+				<fieldset>
+					<!-- chaque demande appartienne à un div différent pour rendre le CSS plus modulable -->
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label for="username">Saisir votre prénom</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="text" name="nom" id="username" placeholder="Prénom" required>
+					</div>
+
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label for="username">Saisir votre nom</label>
+						<!-- input utilisé en rapport avec la question -->
+							<input type="text" name="prenom" id="nom" placeholder="Nom" required>
+					</div>
+
+					<!-- fonction JS qui génère des champs radio en DOM -->
+					<div id="gender" onload="ListGender()"></div>
+
+						<!-- on saute une ligne pour laisser respirer le formulaire et amélioré la lisibilité -->
+						<br>
+
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label for="username">Saisir votre date de naissance</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="date" name="ddn" required>
+					</div>
+
+					<div class="form-control">
+						<label for="username">Saisir votre mail</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="email" name="mail" placeholder="Email" required>
+					</div>
+
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label>Validation mail</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="email" name="mail2" placeholder="Validation Email" required>
+
+					</div>
+
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label for="username">Saisir votre mot de passe</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="passeword" name="mdp" placeholder="mot de passe" required>
+					</div>
+
+						<br>
+
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label for="username">Saisir votre code postal</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="text" name="cp" placeholder="Optionnelle">
+					</div>
+
+					<div class="form-control">
+						<!-- Titre de l'input -->
+						<label for="username">Saisir votre numéro de téléphone</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="telephone" name="tel" placeholder="Optionnelle">
+					</div>
+
+	<!-- nouvelle entête, on passe à la partie delection multiple -->
+	<div class="mid">
+		<h2>Préférence de jeux</h2>
+	</div>
+					<!-- liste à choix multiple généré en JS DOM comme le genre au dessus -->
+					<div id="game" onload="ListGame()"></div>
+
+	<!-- 3ième entête du formulaire, cette fois si l'utilisateur devra selectionner puis noté et enfin rédiger un avis -->
+	<div class="mid">
+		<h2>Avis</h2>
+	</div>
+					<!-- comme précédement la liste à choix est fait en JS DOM -->
+					<div id="critics" onload="ListCritics"></div>
+
+					<div class="form-control">
+						<!-- titre de l'input -->
+						<label for="username">saisir une note sur 5</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="text" name="note" placeholder="note">
+					</div>
+
+					<div class="form-control">
+						<!-- titre de l'input -->
+						<label for="username">Saisir un avis sur le jeu sélectionner</label>
+							<!-- input utilisé en rapport avec la question -->
+							<input type="text" name="avis" maxlength="200" placeholder="votre avis">
+					</div>
+
+					<!-- input de type submit qui va permettre d'envoyé le formulaire sur une autre page web -->
+					<input type="submit" name="submit" value="envoie">
+
+				<!-- fin de la liaison entre les formulaire -->
+				</fieldset>
+			</form>
+</div>
+
+<!-- lien pour le fichier JS externe -->
+<script type="text/javascript" src="../js/script.js"></script>
+</body>
+</html>
