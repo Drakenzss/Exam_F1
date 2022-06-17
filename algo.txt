@@ -1,0 +1,86 @@
+Algorythme : Othelo
+
+// BUT : Construire un Othello
+
+// ENTREE : La personne saisie son nom, le mode de jeu et joue contre un ordinateur
+
+// SORTIE : A la fin de la partie un des joueur gagne et c'est la fin du programme
+
+					//Structure
+Struct Symbôle
+{
+	char player='B'
+	char adversaire='N'
+	char neutre=' '
+}symbôle
+
+
+					//Procedure
+Procedure Menu()
+Debut
+
+FIN
+
+Procedure ClearGrid()
+Debut
+
+Fin
+
+Procedure TourPossible()
+Debut
+
+FIN
+
+Procedure PlaceSymbole()
+DEBUT
+
+FIN
+
+Procedure Adversaire()
+DEBUT
+
+FIN
+
+Procedure AfficheVictoire( char symbole)
+DEBUT
+
+FIN
+
+Procedure DessinGrille()
+DEBUT
+
+FIN
+
+Procedure Relancer()
+DEBUT
+
+FIN
+
+Procedure TourJoueur()
+DEBUT
+
+FIN
+
+Procedure TourAdverse()
+DEBUT
+
+FIN
+
+Procedure Debut()
+DEBUT
+
+FIN
+
+
+
+
+					// Main
+DEBUT
+	// cette variable permet d'annoter les actions qui vont se déroulé
+	
+	// Lancement de l'instance de jeu
+	Game game = Game();
+
+	// Lancement du jeu
+	Menu()
+FIN
